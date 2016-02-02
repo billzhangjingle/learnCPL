@@ -19,6 +19,7 @@ int strcpy_( char *dst, const char *src )
 		i++;
 
 #endif
+
 #if 0
 	while( (*dst = *src)  != '\0'){
 		dst++;
@@ -68,13 +69,27 @@ void  afree_( char *p)
 		
 }
 
-int strcmp( char *s, char *t)
+int strcmp_( char *s, char *t)
 {
 	int i;
+#if 0
+	//如果是加; 会导致到退出条件，然后再判断
 	for ( i = 0; s[i] == t[i]; i++);
+	
+	//每次都进行判断
+	for ( i = 0; s[i] == t[i]; i++)
 		if( s[i] == '\0')
 			return 0;
 	return s[i] - t[i];
+#endif
+
+	//上面这样写是错误的，因为会导致 hello  和hellohh相等
+	//for ( ; *s == *t; s++,t++);
+	for ( ; *s == *t; s++,t++ )
+		
+		if ( *s == '\0')
+			return 0;
+		return *s  - *t;
 }
 
 
@@ -83,9 +98,12 @@ int strcmp( char *s, char *t)
 int main(void)
 {
 	char  *ptr = NULL;
+	int   ret;
 	ptr = alloc_(100);
 
 	strcpy_( ptr, "hello");	
+	ret = strcmp_( ptr, "hellohhh");
+	printf("ret:%d\n", ret );
 	//strcpy(ptr, "hello");
 	printf("%s\n", ptr);
 	return 0;
