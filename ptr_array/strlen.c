@@ -15,6 +15,7 @@ int strlen_( char s[])
 
 	//for ( i= 0 ; p[i] != '\0'; i++ ); 4
 	//	return i;
+
 	
 	
 	//while( *s++ && ++n ); 5

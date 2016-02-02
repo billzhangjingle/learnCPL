@@ -1,8 +1,8 @@
 #include  <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define  ALLOCSIZE 1000
+#include "func.h"
+#define  ALLOCSIZE 10000
 static char allocbuf[ALLOCSIZE];
 
 //下一个空闲的位置
@@ -71,7 +71,7 @@ void  afree_( char *p)
 
 int strcmp_( char *s, char *t)
 {
-	int i;
+	//int i;
 #if 0
 	//如果是加; 会导致到退出条件，然后再判断
 	for ( i = 0; s[i] == t[i]; i++);
@@ -93,8 +93,7 @@ int strcmp_( char *s, char *t)
 }
 
 
-
-
+#if 0
 int main(void)
 {
 	char  *ptr = NULL;
@@ -108,3 +107,5 @@ int main(void)
 	printf("%s\n", ptr);
 	return 0;
 }
+
+#endif
