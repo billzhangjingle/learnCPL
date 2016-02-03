@@ -93,6 +93,25 @@ int strcmp_( char *s, char *t)
 }
 
 
+int numcmp( char *s, char *j )
+{
+	double x, y;
+	x = atof_(s);
+	y = atof_(j);
+
+	if( x > y)
+		return 1;
+	else if( x < y )
+		return -1;
+	else
+		return 0;
+}
+
+
+
+
+
+
 #if 0
 int main(void)
 {
