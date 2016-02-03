@@ -57,11 +57,19 @@ int mounth_day( int year, int day, int *m, int *d )
 	//只是实现功能， 这肯定是自己的思路，
 	//判断停止条件时，用day >0 来判断，
 	//太傻了，怪不得写不出代码来。 
+#if 0
 	for ( i = 1; day > 0 ; i++ )
 		day -= m_day[leaf][i];
 	*m = i - 1 ;
 	*d = day + m_day[leaf][i-1] ;
+#endif
 
+	for ( i = 1; day > m_day[leaf][i]; i++ ){
+			day -= m_day[leaf][i];	
+	}
+	
+	*m 		= i;
+	*d 		= day;
 	return 0;
 } 
 
