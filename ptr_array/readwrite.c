@@ -59,10 +59,16 @@ int readlines( char *lineptr[], int maxline )
 //输出
 int writelines( char *lineptr[], int num )
 {
+#if 0
+太low 了
 	int i;
 	for ( i = 0; i < num; i++){
 		printf("[%d]:%s\n", i, lineptr[i]);
 	}
+	return 0;
+#endif
+	while( num-- > 0)
+		printf(" %s \n", *lineptr++ );
 	return 0;
 }
 
