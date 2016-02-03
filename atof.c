@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-
+#include "func.h"
 double atof_( char s[] )
 {
 	double val, power;
@@ -45,6 +45,7 @@ int getline_( char s[], int lim)
 	return i;
 }
 
+#if 0
 int main(void)
 {
 	//char s[] = "2233432.23242";
@@ -60,3 +61,5 @@ int main(void)
 
 	return 0;
 }
+
+#endif
