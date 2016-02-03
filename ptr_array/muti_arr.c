@@ -16,6 +16,9 @@ int day_of_year( int year, int m, int d )
 	int day ;
 	int leaf;
 	int i;
+	
+	//又是忘记初始化造成的错误，导致打印出来的数字很大
+	//day = 0;
 	leaf = ( year%4 == 0 && year %100 != 0) || ( year%400 == 0 );
 	
 	if ( d > m_day[leaf][m] ){
@@ -28,6 +31,12 @@ int day_of_year( int year, int m, int d )
 	day += d;
 	return day; 
 }
+
+int mounth_day()
+{
+	
+} 
+
 int main( void )
 {
 	int day;
