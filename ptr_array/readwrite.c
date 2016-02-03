@@ -3,31 +3,9 @@
 #include <string.h>
 #include "func.h"
 #define MAXLINES 5000
-char *lineptr[MAXLINES];
 
 #define LINESIZE   1000
 // 读文本，保存
-int readlines( char *lineptr[], int maxline );
-
-//排序
-
-//输出
-int writelines( char *lineptr[], int num );
-
-
-int main(void)
-{
-	int nline;
-	
-	if ( (nline = readlines( lineptr, MAXLINES )) > 0){
-			qsort_( lineptr, 0, nline - 1 );
-			writelines ( lineptr, nline);	
-	}else {
-		printf("error\n");
-	}	
-	return 0;
-}
-
 int readlines( char *lineptr[], int maxline )
 {
 	int 	nline;

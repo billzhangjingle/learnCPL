@@ -9,4 +9,9 @@ int getline_( char s[], int lim );
 char *alloc_(int n );
 int strcmp_( char *dst, char *src );
 void qsort_( char *lineptr[],int low,  int high );
+int readlines( char *lineptr[], int maxline );
+
+int writelines( char *lineptr[], int num );
+
 #endif
+
